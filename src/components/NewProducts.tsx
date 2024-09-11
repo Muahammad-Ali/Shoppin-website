@@ -64,13 +64,49 @@ import ProductCard from "./ProductCard"
         rating:4,
         price:"20"
       },
+      {
+      
+        img:"/bag1.webp",
+        title:"School bag",
+        mainTitle:"MAN YARN FLEECE",
+        desc:"Abc ",
+        rating:4,
+        price:"10"
+      },
+      {
+      
+        img:"/bag2.jpeg",
+        title:"School Bag for Girls",
+        mainTitle:"MAN YARN FLEECE",
+        desc:"Abc ",
+        rating:4,
+        price:"8"
+      },
+      {
+      
+        img:"/bag3.webp",
+        title:"School bag for men",
+        mainTitle:"MAN YARN FLEECE",
+        desc:"Abc ",
+        rating:4,
+        price:"12"
+      },
+      {
+      
+        img:"/bag5.jpeg",
+        title:"school bag for child",
+        mainTitle:"MAN YARN FLEECE",
+        desc:"Abc ",
+        rating:4,
+        price:"5"
+      },
   ];
 
 
 const NewProducts = () => {
   return (
     <div>
-    <div className='container pt-16'>
+    <div className='container pt-16 pb-8'>
         <h2 className='font-medium text-2xl pb-4'>New Products</h2>
         <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-4'>
             {productData.map((item, index) => (

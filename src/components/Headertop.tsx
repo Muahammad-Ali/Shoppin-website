@@ -7,20 +7,7 @@ const Headertop = () => {
 
         <div className='container py-4'>  
             <div className='flex justify-between items-center'>
-                <div className="hidden lg:flex gap-1">
-                    <div className="header_top_icon_wrapper">
-                    <BsFacebook/>
-                    </div>
-                    <div className="header_top_icon_wrapper">
-                    <BsTwitter/>
-                    </div>
-                    <div className="header_top_icon_wrapper">
-                    <BsInstagram/>
-                    </div>
-                    <div className="header_top_icon_wrapper">
-                    <BsLinkedin/>
-                    </div>
-                </div>
+               
                 <div className='text-gray-500 text-[12px]'>
                     <b>FREE SHIPPING </b> THIS WEEK ORDER OVER - $55
                 </div>
