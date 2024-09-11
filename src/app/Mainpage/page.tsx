@@ -40,6 +40,7 @@ export default function Home() {
           <NewProducts/>
           <Testimonial/>
           <Footer/>
+          
         </main>
   )
 }
