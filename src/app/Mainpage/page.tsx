@@ -3,6 +3,9 @@ import NewProducts from "@/components/NewProducts";
 import Testimonial from "@/components/Testimonial";
 import Image from "next/image";
 import Footer from "@/components/Footer";
+import FlashSale from "@/components/FlashSale";
+
+
 export default function Home() {
   var settings = {
     dots:true,
@@ -37,8 +40,9 @@ export default function Home() {
   return (
         <main>
           <Hero/>
+          <FlashSale/>
           <NewProducts/>
-          <Testimonial/>
+          {/* <Testimonial/> */}
           <Footer/>
           
         </main>

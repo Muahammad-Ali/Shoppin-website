@@ -8,7 +8,7 @@ import ProductCard from "./ProductCard"
       mainTitle:"Women YARN FLEECE",
       desc:"For Sale ",
       rating:4,
-      price:"$20"
+      price:"20"
     },
     // {
       
@@ -26,7 +26,7 @@ import ProductCard from "./ProductCard"
         mainTitle:"women YARN FLEECE",
         desc:"Beatiful ",
         rating:4,
-        price:"$15"
+        price:"15"
       },
       {
       
@@ -35,7 +35,7 @@ import ProductCard from "./ProductCard"
         mainTitle:"MAN watch FLEECE",
         desc:"Pretty ",
         rating:4,
-        price:"$15"
+        price:"15"
       },
       {
       
@@ -44,7 +44,7 @@ import ProductCard from "./ProductCard"
         mainTitle:"MAN Shoes FLEECE",
         desc:"Good ",
         rating:4,
-        price:"$10"
+        price:"10"
       },
       {
       
@@ -53,7 +53,7 @@ import ProductCard from "./ProductCard"
         mainTitle:"MAN YARN FLEECE",
         desc:"Abc ",
         rating:4,
-        price:"$20"
+        price:"20"
       },
       {
       
@@ -62,7 +62,7 @@ import ProductCard from "./ProductCard"
         mainTitle:"MAN YARN FLEECE",
         desc:"Abc ",
         rating:4,
-        price:"$20"
+        price:"20"
       },
   ];
 
@@ -70,28 +70,22 @@ import ProductCard from "./ProductCard"
 const NewProducts = () => {
   return (
     <div>
-        <div className='container pt-16'>
-         <h2 className='font-medium text-2xl pb-4 '> New Products</h2>
-         <div className='grid  grid-cols-1 place-items-center sm:place-items-start sm:grid-cols-2
-         lg:grid-cols-3 xl:grid-cols-4 gap-10 xl:gap-x-20 xl:gap-y-10
-         '>
-            {productData.map((item,index)=>(
-                
+    <div className='container pt-16'>
+        <h2 className='font-medium text-2xl pb-4'>New Products</h2>
+        <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-4'>
+            {productData.map((item, index) => (
                 <ProductCard
-                key={index}
-                 img={item.img}
-                 title={item.title}
-                 desc={item.desc}
-                 rating={item.rating}
-                price={item.price}
-                
+                    key={index}
+                    img={item.img}
+                    title={item.title}
+                    desc={item.desc}
+                    rating={item.rating}
+                    price={item.price}
                 />
-            
-        
-       ) )}
-         </div>
+            ))}
         </div>
     </div>
+</div>
   )
 }
 
