@@ -3,6 +3,7 @@ import { BiUser } from 'react-icons/bi';
 import { BsSearch } from 'react-icons/bs';
 import { FiHeart } from 'react-icons/fi';
 import { HiOutlineShoppingBag } from 'react-icons/hi';
+import Link from 'next/link';
 
 const HeaderMain = () => {
   return (
@@ -33,7 +34,12 @@ const HeaderMain = () => {
 
         </div>
         <div className='hidden lg:flex gap-4  text-gray-500  text-[30px]'>
-          <BiUser />
+          <Link href='/sign-in'>
+            <div className='cursor-pointer'>
+              <BiUser />
+            </div>
+          </Link>
+
 
           <div className='relative'>
             <FiHeart />

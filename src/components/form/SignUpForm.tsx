@@ -45,7 +45,7 @@ const SignUpForm = () => {
   });
 
   const onSubmit =  async (values: z.infer<typeof FormSchema>) => {
-    const response = await fetch('/api/user',{
+    const response = await fetch('/api/user', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -55,94 +55,113 @@ const SignUpForm = () => {
         email: values.email,
         password: values.password,
       }),
-    })
+    });
     if(response.ok) {
-          router.push('/sign-in')
-    }else {
+      router.push('/sign-in');
+    } else {
       console.error('Registration failed');
     }
   };
 
   return (
-    <Form {...form}>
-      <form onSubmit={form.handleSubmit(onSubmit)} className='w-full'>
-        <div className='space-y-2'>
-          <FormField
-            control={form.control}
-            name='username'
-            render={({ field }) => (
-              <FormItem>
-                <FormLabel>Username</FormLabel>
-                <FormControl>
-                  <Input placeholder='johndoe' {...field} />
-                </FormControl>
-                <FormMessage />
-              </FormItem>
-            )}
-          />
-          <FormField
-            control={form.control}
-            name='email'
-            render={({ field }) => (
-              <FormItem>
-                <FormLabel>Email</FormLabel>
-                <FormControl>
-                  <Input placeholder='mail@example.com' {...field} />
-                </FormControl>
-                <FormMessage />
-              </FormItem>
-            )}
-          />
-          <FormField
-            control={form.control}
-            name='password'
-            render={({ field }) => (
-              <FormItem>
-                <FormLabel>Password</FormLabel>
-                <FormControl>
-                  <Input
-                    type='password'
-                    placeholder='Enter your password'
-                    {...field}
-                  />
-                </FormControl>
-                <FormMessage />
-              </FormItem>
-            )}
-          />
-          <FormField
-            control={form.control}
-            name='confirmPassword'
-            render={({ field }) => (
-              <FormItem>
-                <FormLabel>Re-Enter your password</FormLabel>
-                <FormControl>
-                  <Input
-                    placeholder='Re-Enter your password'
-                    type='password'
-                    {...field}
-                  />
-                </FormControl>
-                <FormMessage />
-              </FormItem>
-            )}
-          />
+    <div className='flex min-h-screen items-center justify-center bg-gray-50'>
+      <div className='w-full max-w-md p-8 bg-white shadow-md rounded-lg'>
+        <h2 className='text-2xl font-bold text-center mb-6'>Sign Up</h2>
+        <Form {...form}>
+          <form onSubmit={form.handleSubmit(onSubmit)} className='space-y-4'>
+            <div className='space-y-2'>
+              <FormField
+                control={form.control}
+                name='username'
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel>Username</FormLabel>
+                    <FormControl>
+                      <Input
+                        placeholder='johndoe'
+                        {...field}
+                        className='w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500'
+                      />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+              <FormField
+                control={form.control}
+                name='email'
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel>Email</FormLabel>
+                    <FormControl>
+                      <Input
+                        placeholder='mail@example.com'
+                        {...field}
+                        className='w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500'
+                      />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+              <FormField
+                control={form.control}
+                name='password'
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel>Password</FormLabel>
+                    <FormControl>
+                      <Input
+                        type='password'
+                        placeholder='Enter your password'
+                        {...field}
+                        className='w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500'
+                      />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+              <FormField
+                control={form.control}
+                name='confirmPassword'
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel>Re-Enter your password</FormLabel>
+                    <FormControl>
+                      <Input
+                        placeholder='Re-Enter your password'
+                        type='password'
+                        {...field}
+                        className='w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500'
+                      />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+            </div>
+            <Button className='w-full mt-4 bg-blue-500 text-white py-2 rounded-md hover:bg-blue-600' type='submit'>
+              Sign up
+            </Button>
+          </form>
+        </Form>
+        <div className='relative mt-6 flex items-center justify-center'>
+          <span className='absolute bg-white px-2 text-sm text-gray-500'>or</span>
+          <div className='w-full h-px bg-gray-300'></div>
         </div>
-        <Button className='w-full mt-6' type='submit'>
-          Sign up
-        </Button>
-      </form>
-      <div className='mx-auto my-4 flex w-full items-center justify-evenly before:mr-4 before:block before:h-px before:flex-grow before:bg-stone-400 after:ml-4 after:block after:h-px after:flex-grow after:bg-stone-400'>
-        or
+        <GoogleSignInButton className='w-full mt-4 bg-red-500 text-white py-2 rounded-md hover:bg-red-600'>
+          Sign up with Google
+        </GoogleSignInButton>
+
+        <p className='text-center text-sm text-gray-600 mt-4'>
+          Already have an account?&nbsp;
+          <Link className='text-blue-500 hover:underline' href='/sign-in'>
+            Sign in
+          </Link>
+        </p>
       </div>
-      <GoogleSignInButton>Sign up with Google</GoogleSignInButton>
-      <p className='text-center text-sm text-gray-600 mt-2'>
-        If you don&apos;t have an account, please&nbsp;
-        <Link className='text-blue-500 hover:underline' href='/sign-in'>
-          Sign in
-        </Link>
-      </p>
-    </Form>
+    </div>
   );
 };
 
